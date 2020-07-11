@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kakite.dao.EmployeeMapper">
+    <select id="queryById" parameterType="Integer" resultType="com.kakite.entities.Employee">
+        select * from employee where id = #{id}
+    </select>
+
+    <delete id="deleteById" parameterType="Integer">
+        delete from employee where id = #{id}
+    </delete>
+
+    <insert id="createEmployee" parameterType="com.kakite.entities.Employee">
+        insert into employee(age, name, address) valus(#{age}, #{name}, #{address})
+    </insert>
+
+    <update id="updateById" parameterType="com.kakite.entities.Employee">
+        update employee set age = #{age}, name = #{name}, address = #{address} where id = #{id}
+    </update>
+</mapper>
