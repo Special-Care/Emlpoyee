@@ -7,4 +7,15 @@
         select * from employee where id = #{id}
     </select>
 
+    <delete id="deleteById" parameterType="Integer">
+        delete from employee where id = #{id}
+    </delete>
+
+    <insert id="createEmployee" parameterType="com.kakite.entities.Employee">
+        insert into employee(age, name, address) values(#{age}, #{name}, #{address})
+    </insert>
+
+    <update id="updateById" parameterType="com.kakite.entities.Employee">
+        update employee set age = #{age}, name = #{name}, address = '${address}' where id = #{id}
+    </update>
 </mapper>

@@ -24,4 +24,13 @@ public class EmployeeService {
     public Employee findByName(Integer id) {
         return mapper.queryById(id);
     }
+    public Integer deleteByName(Integer id) {
+        return mapper.deleteById(id);
+    }
+    public Integer createEmployee(Employee employee) {
+        return mapper.createEmployee(employee);
+    }
+    public Integer updateById(Employee employee) {
+        return mapper.updateById(employee);
+    }
 }

@@ -12,10 +12,10 @@
     </delete>
 
     <insert id="createEmployee" parameterType="com.kakite.entities.Employee">
-        insert into employee(age, name, address) valus(#{age}, #{name}, #{address})
+        insert into employee(age, name, address) values(#{age}, #{name}, #{address})
     </insert>
 
     <update id="updateById" parameterType="com.kakite.entities.Employee">
-        update employee set age = #{age}, name = #{name}, address = #{address} where id = #{id}
+        update employee set age = #{age}, name = #{name}, address = '${address}' where id = #{id}
     </update>
 </mapper>
